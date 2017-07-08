@@ -56,11 +56,11 @@ export class WeatherCityComponent implements OnInit, OnDestroy {
           tempWeatherData[0]['item']['forecast'].forEach(x => {
             this.weatherData.push(Object.assign({}, x));
           });
-          this.weatherData = this.weatherData.splice(0, 7);
+          this.weatherData = this.weatherData.splice(0, 6);
       } else {
         this.weatherService.getWeatherByCity(params['city']).subscribe(data => {
           if (data['_body'] && data['_body']['query'] && data['_body']['query']['count'] === 1) {
-            this.weatherData = data['_body']['query']['results']['channel']['item']['forecast'].splice(0, 7);
+            this.weatherData = data['_body']['query']['results']['channel']['item']['forecast'].splice(0, 6);
           } else {
             this.router.navigate(['/']);
           }
