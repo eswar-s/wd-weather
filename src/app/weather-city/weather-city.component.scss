@@ -1,0 +1,108 @@
+.weather-container {
+    display: flex;
+    justify-content: center;
+    padding: 32px 0px;
+    flex-wrap: wrap;
+    font-family: 'Cutive Mono', monospace;
+    text-align: center;
+
+    .weather-item {
+        flex: 1;
+        height: 150px;
+        min-width: 120px;
+        max-width: 120px;
+        background: white;
+        margin: 4px;
+        position: relative;
+        border-radius: 2px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        display: flex;
+        flex-direction: column;
+
+        .temperature {
+            position: relative;
+            display: flex;
+            justify-content: center;
+
+            .temperature-text {
+                font-size: 32px;
+                margin: 8px;
+                position: relative;
+                color: #262a33;
+
+                &:after {
+                    content: "";
+                    height: 4px;
+                    width: 4px;
+                    border: 1px solid #333;
+                    display: inline-block;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 4px;
+                    margin-left: -4px;
+                }
+
+                &:last-child {
+                    opacity: 0.6;
+                }
+            }
+
+        }
+        .weather-image {
+            background-image: url('/assets/_spritesheet.png');
+            background-size: 500% 400%;
+            height: 64px;
+            width: 64px;
+            margin: 0 auto;
+            background-position: 100% 100%;
+
+            &.cloudy {
+                background-position: 300% 200%;
+            }
+
+            &.thunderstorms {
+                background-position: 500% 300%;
+            }
+    
+            &.rain {
+                background-position: 300% 100%;
+            }
+    
+            &.snow {
+                background-position: 200% 400%;
+            }
+    
+            &.windy {
+                background-position: 500% 200%;
+            }
+    
+            &.cold {
+                background-position: 100% 400%;
+            }
+    
+            &.sunny {
+                background-position: 100% 300%;
+            }
+
+            &.thundershowers {
+                background-position: 100% 200%;
+            }
+     
+        }
+        .date {
+            margin: 8px 0px;
+            color: #262a33;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 375px) {
+    .weather-container {
+        padding: 16px 0px;
+        .weather-item {
+            max-width: 45%;
+        }
+    }
+}

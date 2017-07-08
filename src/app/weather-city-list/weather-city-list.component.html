@@ -1,0 +1,25 @@
+<div class="cities-container">
+
+  <div *ngFor="let weather of weathers | async" class="city-item" (click)="viewWeatherInDetail(weather.location.city)">
+    <div class="weather-opt-image-container">
+      <p>{{weather.location.city}}</p>
+    </div>
+    <div class="weather-data-container">
+      <p>{{stringAsDate(weather.lastBuildDate) | date:'EEEE | MMM dd | hh:mm a'}}</p>
+      <div class="temperature">
+          <p class="temperature-text">{{weather.item.condition.temp}}</p>
+      </div>
+      <div class="wind-and-humidity">
+        <div class="wind">
+          <p>{{weather.wind.speed}} mph</p>
+          <p>Wind</p>
+        </div>
+        <div class="humidity">
+          <p>{{weather.atmosphere.humidity}}%</p>
+          <p>Humidity</p>
+        </div>
+      </div>
+    </div>
+    <i class="material-icons delete-weather" (click)="deleteWeather(weather); $event.stopPropagation()">close</i>
+  </div>
+</div>

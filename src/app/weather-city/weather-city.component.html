@@ -1,0 +1,10 @@
+<div class="weather-container" *ngIf="weatherData">
+  <div class="weather-item" *ngFor="let weather of weatherData">
+    <div class="temperature">
+        <p class="temperature-text">{{weather.high}}</p>
+        <p class="temperature-text">{{weather.low}}</p>
+    </div>
+    <div class="weather-image" [ngClass]="getWeatherClass(weather.code)">&nbsp;</div>
+    <p class="date">{{weather.date}}</p>
+  </div>
+</div>

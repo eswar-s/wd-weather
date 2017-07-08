@@ -1,0 +1,101 @@
+.cities-container {
+    display: flex;
+    justify-content: center;
+    padding: 32px 0px;
+    flex-wrap: wrap;
+
+    .city-item {
+        flex: 1;
+        height: 420px;
+        min-width: 320px;
+        max-width: 320px;
+        background: white;
+        margin: 8px;
+        //display: inline-block;
+        position: relative;
+        border-radius: 2px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        cursor: pointer;
+
+        display: flex;
+        flex-direction: column;
+
+        &:hover {
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        }
+
+        .weather-opt-image-container {
+            height: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            p {
+                font-family: 'Cutive Mono', monospace;
+                font-size: 24px;
+                text-transform: uppercase;
+                color: #262a33;
+            }
+        }
+
+        .weather-data-container {
+            height: 40%;
+            text-align: center;
+            font-family: 'Cutive Mono', monospace;
+
+            .temperature {
+                .temperature-text {
+                    font-size: 48px;
+                    margin: 0;
+                    position: relative;
+                    color: #262a33;
+
+                    &:after {
+                        content: "";
+                        height: 6px;
+                        width: 6px;
+                        border: 1px solid #333;
+                        display: inline-block;
+                        border-radius: 50%;
+                        position: absolute;
+                        top: 4px;
+                        margin-left: -4px;
+                    }
+                }
+            }
+
+            .wind-and-humidity {
+                display: flex;
+
+                div {
+                    flex: 1;
+
+                    p {
+                        margin: 10px 0;
+                    }
+                }
+            }
+        }
+
+        i.delete-weather {
+            position: absolute;
+            right: 0;
+            padding: 6px;
+            display: none;
+        }
+
+        &:hover i.delete-weather {
+            display: block;
+        }
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .cities-container {
+        padding: 16px 0px;
+        .city-item {
+            min-width: 90%;
+        }
+    }
+}
