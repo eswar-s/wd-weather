@@ -47,19 +47,19 @@ header {
                 &:first-child {
                     height: 100%;
                     width: 100%;
-                    background-image: url('/assets/_spritesheet_white.png');
+                    background-image: url('/assets/spritesheet_white.png');
                     background-size: 500% 400%;
                 }
             }
 
             &.w-letter > div, &.a-letter > div, &.h-letter > div, &.r-letter > div {
                 background-position: 400% 200%;
-                animation: up-direction 3s ease-in-out forwards;
+                animation: up-direction 2.5s ease-in-out forwards;
             }
 
             &.e-letter > div, &.t-letter > div {
                 background-position: 200% 400%;
-                animation: right-direction 3s ease-in forwards;
+                animation: right-direction 2.5s ease-in forwards;
             }
         }
     }
