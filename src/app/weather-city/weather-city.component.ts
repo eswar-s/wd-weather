@@ -13,8 +13,8 @@ import { WeatherService } from '../weather.service';
 export class WeatherCityComponent implements OnInit, OnDestroy {
 
   private subscription: Subscription;
-  private weatherData: any[];
   private weatherList: any[];
+  weatherData: any[];
 
   constructor(private route: ActivatedRoute, private weatherService: WeatherService, private router: Router) {
      this.weatherService.weathers.subscribe(data => {
