@@ -21,7 +21,7 @@ export class WeatherService {
     if (storedSavedLocations) {
       savedLocations = JSON.parse(storedSavedLocations);
     } else {
-      savedLocations = ['Chennai', 'Bengaluru'];
+      savedLocations = ['Bengaluru', 'New York'];
       localStorage.setItem('saved_locations', JSON.stringify(savedLocations));
     }
 
