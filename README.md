@@ -31,5 +31,4 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ## Pending tasks
 
 1. Unit testing
-2. adding OpenGraph tags and SEO optimization
-3. Code linting
+2. Code linting and Optimization
