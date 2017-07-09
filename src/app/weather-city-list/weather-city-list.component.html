@@ -1,8 +1,9 @@
 <div class="cities-container">
 
   <div *ngFor="let weather of weathers | async" class="city-item" (click)="viewWeatherInDetail(weather.location.city)">
-    <div class="weather-opt-image-container">
+    <div class="weather-opt-image-container" [ngClass]="getWeatherClass(weather.item.condition.code)">
       <p>{{weather.location.city}}</p>
+      <div class="waves-image"></div>
     </div>
     <div class="weather-data-container">
       <p>{{stringAsDate(weather.lastBuildDate) | date:'EEEE | MMM dd | hh:mm a'}}</p>

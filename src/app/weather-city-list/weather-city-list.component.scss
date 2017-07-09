@@ -30,13 +30,61 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
+            background-size: cover;
 
             p {
                 font-family: 'Cutive Mono', monospace;
                 font-size: 24px;
                 text-transform: uppercase;
-                color: #262a33;
+                color: #fff;
             }
+
+            .waves-image {
+                background: url('/assets/waves.png');
+                bottom: -4px;
+                position: absolute;
+                width: 100%;
+                height: 60px;
+                background-size: cover;
+            }
+
+            &.unknown, &.fog, &.wind {
+                background-image: url('/assets/sunny.png');
+            }
+
+            &.sunny {
+                background-image: url('/assets/sunny.png');
+            }
+
+            &.cloudy {
+                background-image: url('/assets/mostly-cloudy.png');
+            }
+
+            &.partly-cloudy {
+                background-image: url('/assets/partley-cloudy.png');
+            }
+
+            &.rain {
+                background-image: url('/assets/rain.png');
+            }
+
+            &.cloudy-sunny {
+                background-image: url('/assets/small/cloudy_sunny.png');
+            }
+
+            &.cloudy-scattered-showers, &.scattered-showers {
+                background-image: url('/assets/scattered-showers.png');
+            }
+
+            &.snow {
+                background-image: url('/assets/snow.png');
+            }
+
+            &.thunderstorm {
+                background-image: url('/assets/thundershowers.png');
+            }
+
         }
 
         .weather-data-container {
@@ -83,6 +131,7 @@
             right: 0;
             padding: 6px;
             display: none;
+            color: #fff;
         }
 
         &:hover i.delete-weather {

@@ -71,4 +71,33 @@ export class WeatherService {
 
     return this.jsonp.get(apiURL, { search: params });
   }
+
+  getWeatherClass(value: string): string {
+    const code = Number(value);
+    let cssClassName = 'unknown';
+    if (code === 3 || code === 4 || code === 37 || code === 38 || code === 39 || code === 47) {
+      cssClassName = 'thunderstorm';
+    } else if (code >= 5 && code <= 12 || code === 40 || code === 45) {
+      cssClassName = 'rain';
+    } else if (code >= 13 && code <= 16 || code === 41 || code === 42 || code === 43) {
+      cssClassName = 'snow';
+    } else if (code === 18) {
+      cssClassName = 'sleet';
+    } else if (code === 20) {
+      cssClassName = 'fog';
+    } else if (code === 24) {
+      cssClassName = 'wind';
+    } else if (code === 25) {
+      cssClassName = 'cold';
+    } else if (code >= 26 && code <= 29 || code === 44) {
+      cssClassName = 'cloudy';
+    } else if (code === 30) {
+      cssClassName = 'partly-cloudy';
+    } else if (code === 32 || code === 36) {
+      cssClassName = 'sunny';
+    } else if (code === 40) {
+      cssClassName = 'scattered-showers';
+    }
+    return cssClassName;
+  }
 }

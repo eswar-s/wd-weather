@@ -24,27 +24,9 @@ export class WeatherCityComponent implements OnInit, OnDestroy {
   }
 
   getWeatherClass(value: string): string {
-    const code = Number(value);
-    let cssClassName = '';
-    if (code === 3 || code === 4 || code === 37 || code === 38 || code === 39) {
-      cssClassName = 'thunderstorms';
-    } else if (code >= 5 && code <= 12 || code === 40 || code === 45) {
-      cssClassName = 'rain';
-    } else if (code >= 13 && code <= 23 || code === 41 || code === 42 || code === 43) {
-      cssClassName = 'snow';
-    } else if (code === 24) {
-      cssClassName = 'windy';
-    } else if (code === 25) {
-      cssClassName = 'cold';
-    } else if (code >= 26 && code <= 30 || code === 44) {
-      cssClassName = 'cloudy';
-    } else if (code === 32 || code === 36) {
-      cssClassName = 'sunny';
-    }  else if (code === 47) {
-      cssClassName = 'thundershowers';
-    }
-    return cssClassName;
+    return this.weatherService.getWeatherClass(value);
   }
+
   ngOnInit() {
     this.subscription = this.route.params.subscribe(params => {
       let tempWeatherData = this.weatherList.filter(weather => {

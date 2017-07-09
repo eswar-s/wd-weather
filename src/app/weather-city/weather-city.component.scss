@@ -50,43 +50,63 @@
 
         }
         .weather-image {
-            background-image: url('/assets/spritesheet.png');
-            background-size: 500% 400%;
+            background-size: 100%;
             height: 64px;
             width: 64px;
             margin: 0 auto;
-            background-position: 100% 100%;
+            
+            &.unknown {
+                background-image: url('/assets/spritesheet.png');
+                background-size: 500% 400%;
+                background-position: 100% 100%;
+            }
+
+            &.sunny {
+                background-image: url('/assets/small/clear.png');
+            }
 
             &.cloudy {
-                background-position: 300% 200%;
+                background-image: url('/assets/small/cloudy.png');
             }
 
-            &.thunderstorms {
-                background-position: 500% 300%;
+            &.partly-cloudy {
+                background-image: url('/assets/small/partley-cloudy.png');
             }
-    
+
             &.rain {
-                background-position: 300% 100%;
-            }
-    
-            &.snow {
-                background-position: 200% 400%;
-            }
-    
-            &.windy {
-                background-position: 500% 200%;
-            }
-    
-            &.cold {
-                background-position: 100% 400%;
-            }
-    
-            &.sunny {
-                background-position: 100% 300%;
+                background-image: url('/assets/small/rain.png');
             }
 
-            &.thundershowers {
-                background-position: 100% 200%;
+            &.cloudy-sunny {
+                background-image: url('/assets/small/cloudy_s_sunny.png');
+            }
+
+            &.cloudy-scattered-showers {
+                background-image: url('/assets/small/cloudy-scattered-showers.png');
+            }
+
+            &.scattered-showers {
+                background-image: url('/assets/small/scattered-showers.png');
+            }
+
+            &.fog {
+                background-image: url('/assets/small/fog.png');
+            }
+
+            &.sleet {
+                background-image: url('/assets/small/sleet.png');
+            }
+
+            &.snow {
+                background-image: url('/assets/small/snow.png');
+            }
+
+            &.thunderstorm {
+                background-image: url('/assets/small/thunderstorm.png');
+            }
+
+            &.wind {
+                background-image: url('/assets/small/wind.png');
             }
      
         }

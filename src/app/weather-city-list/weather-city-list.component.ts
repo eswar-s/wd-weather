@@ -30,6 +30,10 @@ export class WeatherCityListComponent implements OnInit {
     this.weatherService.deleteWeatherInStore(data);
   }
 
+  getWeatherClass(value: string): string {
+    return this.weatherService.getWeatherClass(value);
+  }
+
   stringAsDate(value: string): Date {
     let date = new Date(value.substr(5).substr(0, 11).toUpperCase());
     if (value.substr(23, 2) === 'PM') {
