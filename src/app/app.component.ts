@@ -41,7 +41,7 @@ export class AppComponent implements OnInit {
   }
 
   reloadPage() {
-    document.location.href = '/';
+    location.reload();
   }
 
   toggleCityForm() {
