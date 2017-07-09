@@ -8,7 +8,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy-to-github-pages": "ng build --prod --output-path docs --base-href \"/wd-weather/\" && cp docs/index.html docs/404.html && git add . && git commit -m 'deploy to docs folder' && git push -u origin master"
   },
   "private": true,
   "dependencies": {
