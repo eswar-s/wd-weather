@@ -26,4 +26,10 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 3. offline access with service workers
 4. better UI with animations
 5. using small images with color codes
-6. adding OpenGraph tags and SEO optimization
+
+
+## Pending tasks
+
+1. Unit testing
+2. adding OpenGraph tags and SEO optimization
+3. Code linting
