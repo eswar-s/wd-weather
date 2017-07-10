@@ -7,6 +7,8 @@ import 'rxjs/add/operator/map';
 
 import { AppStore } from './models/app.store.model';
 
+import { environment } from '../environments/environment';
+
 @Injectable()
 export class WeatherService {
 
@@ -73,7 +75,7 @@ export class WeatherService {
   }
 
   public getOpenWeather(city: string): Observable<Response> {
-    let apiURL = 'http://api.openweathermap.org/data/2.5/forecast';
+    let apiURL = environment.openWeatherAPI;
 
     let params = new URLSearchParams();
     params.set('id', city);
