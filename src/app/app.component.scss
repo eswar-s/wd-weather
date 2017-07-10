@@ -79,6 +79,35 @@ header {
     }
 }
 
+.toggle-weather-api {
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    width: 280px;
+    display: flex;
+    margin: 8px;
+    right: 0;
+    position: absolute;
+    
+    .open-weather-api {
+        flex: 1;
+        text-align: center;
+        padding: 8px;
+        cursor: pointer;
+    }
+    .yahoo-weather-api {
+        flex: 1;
+        text-align: center;
+        padding: 8px;
+        cursor: pointer;
+    }
+
+    .disabled {
+        background: #ddd;
+        pointer-events: none;
+        cursor: not-allowed;
+    }
+}
+
 @media only screen and (max-width: 420px) {
     header {
         font-size: 40px;
@@ -104,6 +133,11 @@ header {
                 font-size: 32px;
             }
         }
+    }
+
+    .toggle-weather-api {
+        position: relative;
+        margin: 8px auto;
     }
 }
 
@@ -156,6 +190,9 @@ header {
             animation: line 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite, rotate 1.6s linear infinite;
     }
 }
+
+
+
 
 
 

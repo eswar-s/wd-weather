@@ -12,10 +12,6 @@ import { weathers } from './weather.store';
 import { AppRoutingModule } from './app.routing';
 import { ToastComponent } from './toast/toast.component';
 
-import 'rxjs/add/operator/filter';
-
-
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -72,6 +72,17 @@ export class WeatherService {
     return this.jsonp.get(apiURL, { search: params });
   }
 
+  public getOpenWeather(city: string): Observable<Response> {
+    let apiURL = 'http://api.openweathermap.org/data/2.5/forecast';
+
+    let params = new URLSearchParams();
+    params.set('id', city);
+    params.set('APPID', '2858d62c90078157cddb84347d8430a2');
+    params.set('callback', 'JSONP_CALLBACK');
+
+    return this.jsonp.get(apiURL, { search: params });
+  }
+
   getWeatherClass(value: string): string {
     const code = Number(value);
     let cssClassName = 'unknown';

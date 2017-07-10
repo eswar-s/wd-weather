@@ -1,0 +1,14 @@
+<div class="open-weather-container">
+  <p class="city-name">{{cityName}}</p>
+  <div class="weather-by-date-container" *ngFor="let dateWeather of weatherData">
+    <p class="date">{{dateWeather.date}}</p>
+    <div class="weather-item" *ngFor="let weatherItemInfo of dateWeather.info">
+      <div class="temperature">
+        <p class="temperature-text">{{convertKelvinToFahrenheit(weatherItemInfo.main.temp_max)}}</p>
+        <p class="temperature-text">{{convertKelvinToFahrenheit(weatherItemInfo.main.temp_min)}}</p>
+      </div>
+      <div class="weather-image" [ngClass]="getWeatherClass(weatherItemInfo.weather[0].id)">&nbsp;</div>
+      <p class="time">{{sliceTimeFromDateString(weatherItemInfo.dt_txt)}}</p>
+    </div>
+  </div>
+</div>

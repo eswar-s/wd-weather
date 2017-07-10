@@ -1,5 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { By } from '@angular/platform-browser';
+import { DebugElement } from '@angular/core';
+
 import { APP_BASE_HREF } from '@angular/common';
 
 import { StoreModule } from '@ngrx/store';
@@ -8,18 +11,20 @@ import { AppRoutingModule } from '../app.routing';
 
 import { weathers } from '../weather.store';
 
-import { WeatherCityListComponent } from './weather-city-list.component';
+import { OpenWeatherComponent } from './open-weather.component';
 
-describe('WeatherCityListComponent', () => {
-  let component: WeatherCityListComponent;
-  let fixture: ComponentFixture<WeatherCityListComponent>;
+describe('OpenWeatherComponent', () => {
+  let component: OpenWeatherComponent;
+  let fixture: ComponentFixture<OpenWeatherComponent>;
+  let de: DebugElement;
+  let el: HTMLElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
         JsonpModule,
         StoreModule.provideStore({ weathers: weathers }),
-        AppRoutingModule
+        AppRoutingModule,
       ],
       providers: [{provide: APP_BASE_HREF, useValue : '/' }]
     })
@@ -27,12 +32,15 @@ describe('WeatherCityListComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WeatherCityListComponent);
+    fixture = TestBed.createComponent(OpenWeatherComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    de = fixture.debugElement.query(By.css('.city-name'));
+    el = de.nativeElement;
   });
 
   it('should be created', () => {
     expect(component).toBeTruthy();
   });
+
 });

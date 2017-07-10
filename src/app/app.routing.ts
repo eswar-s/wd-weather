@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { WeatherService } from './weather.service';
 import { ToastService } from './toast/toast.service';
 
+import { OpenWeatherComponent } from './open-weather/open-weather.component';
 import { WeatherCityListComponent } from './weather-city-list/weather-city-list.component';
 import { WeatherCityComponent } from './weather-city/weather-city.component';
 
@@ -12,7 +13,8 @@ const routes: Routes = [
     {
         path: '',
         children: [
-            { path: '', pathMatch: 'full', component: WeatherCityListComponent },
+            { path: '', pathMatch: 'full', component: OpenWeatherComponent },
+            { path: 'yahoo', pathMatch: 'full', component: WeatherCityListComponent },
             { path: ':city', pathMatch: 'full', component: WeatherCityComponent}
         ]
     }
@@ -26,7 +28,8 @@ const routes: Routes = [
   exports: [RouterModule],
   declarations: [
     WeatherCityListComponent,
-    WeatherCityComponent
+    WeatherCityComponent,
+    OpenWeatherComponent
   ],
   providers: [
     WeatherService,

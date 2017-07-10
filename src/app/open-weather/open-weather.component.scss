@@ -1,0 +1,162 @@
+.open-weather-container {
+    padding: 32px 0px;
+    font-family: 'Cutive Mono', monospace;
+    text-align: center;
+
+    .city-name {
+        font-size: 32px;
+        margin: 0; 
+        color: #262a33;
+    }
+
+    .weather-by-date-container {
+        max-width: 960px;
+        width: 100%;
+        background: white;
+        margin: 4px;
+        position: relative;
+        border-radius: 2px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        margin: 8px auto;
+        display: flex;
+        padding-top: 32px;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        border-left: 3px solid #262a33;
+
+        .date {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            font-size: 18px;
+            padding: 4px;
+            margin: 0;
+            opacity: 0.6;
+            font-weight: 700;
+            
+        }
+        .weather-item {
+            flex: 1;
+            height: 150px;
+            max-width: 111px;
+            min-width: 111px;
+            background: white;
+            margin: 4px;
+            position: relative;
+            border-radius: 2px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+
+            .temperature {
+                position: relative;
+                display: flex;
+                justify-content: center;
+
+                .temperature-text {
+                    font-size: 32px;
+                    margin: 8px;
+                    position: relative;
+                    color: #262a33;
+
+                    &:after {
+                        content: "";
+                        height: 4px;
+                        width: 4px;
+                        border: 1px solid #333;
+                        display: inline-block;
+                        border-radius: 50%;
+                        position: absolute;
+                        top: 4px;
+                        margin-left: -4px;
+                    }
+
+                    &:last-child {
+                        opacity: 0.6;
+                    }
+                }
+
+            }
+            .weather-image {
+                background-size: 100%;
+                height: 64px;
+                width: 64px;
+                margin: 0 auto;
+                
+                &.unknown {
+                    background-image: url('/assets/spritesheet.png');
+                    background-size: 500% 400%;
+                    background-position: 100% 100%;
+                }
+
+                &.sunny {
+                    background-image: url('/assets/small/clear.png');
+                }
+
+                &.cloudy {
+                    background-image: url('/assets/small/cloudy.png');
+                }
+
+                &.partly-cloudy {
+                    background-image: url('/assets/small/partly-cloudy.png');
+                }
+
+                &.rain {
+                    background-image: url('/assets/small/rain.png');
+                }
+
+                &.cloudy-sunny {
+                    background-image: url('/assets/small/cloudy_s_sunny.png');
+                }
+
+                &.cloudy-scattered-showers {
+                    background-image: url('/assets/small/cloudy-scattered-showers.png');
+                }
+
+                &.scattered-showers {
+                    background-image: url('/assets/small/scattered-showers.png');
+                }
+
+                &.fog {
+                    background-image: url('/assets/small/fog.png');
+                }
+
+                &.sleet {
+                    background-image: url('/assets/small/sleet.png');
+                }
+
+                &.snow {
+                    background-image: url('/assets/small/snow.png');
+                }
+
+                &.thunderstorm {
+                    background-image: url('/assets/small/thunderstorm.png');
+                }
+
+                &.wind {
+                    background-image: url('/assets/small/wind.png');
+                }
+        
+            }
+            .time {
+                margin: 8px 0px;
+                color: #262a33;
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 420px) {
+    .open-weather-container {
+        padding: 16px 0px;
+        .weather-by-date-container {
+            max-width: 90%;
+            border: none;
+            .weather-item {
+                max-width: 45%;
+            }
+        }
+    }
+}

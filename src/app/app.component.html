@@ -29,8 +29,12 @@
       <div>R</div>
     </li>
   </ul>
-  <div class="add-button" (click)="toggleCityForm()"><i class="material-icons">{{ showCityForm || activateCancelButton ? 'cancel' : 'add_circle_outline' }}</i></div>
+  <div class="add-button" (click)="toggleCityForm()" *ngIf="!isOpenWeather"><i class="material-icons">{{ showCityForm || activateCancelButton ? 'cancel' : 'add_circle_outline' }}</i></div>
 </header>
+<div class="toggle-weather-api" (click)="toggleWeatherApi()">
+  <div class="open-weather-api" [ngClass]="{'disabled': isOpenWeather}">Open Weather</div>
+  <div class="yahoo-weather-api" [ngClass]="{'disabled': !isOpenWeather}">Yahoo Weather</div>
+</div>
 <section class="content-container" *ngIf="showCityForm">
   <div class="add-city-form">
     <input placeholder="Enter City Name" [(ngModel)]="cityNameModel" (keyup.enter)="validateForm()">
