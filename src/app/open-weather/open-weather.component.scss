@@ -55,21 +55,21 @@
                 justify-content: center;
 
                 .temperature-text {
-                    font-size: 32px;
+                    font-size: 24px;
                     margin: 8px;
                     position: relative;
                     color: #262a33;
 
                     &:after {
                         content: "";
-                        height: 4px;
-                        width: 4px;
+                        height: 2px;
+                        width: 2px;
                         border: 1px solid #333;
                         display: inline-block;
                         border-radius: 50%;
                         position: absolute;
-                        top: 4px;
-                        margin-left: -4px;
+                        top: 2px;
+                        margin-left: -2px;
                     }
 
                     &:last-child {
@@ -146,6 +146,16 @@
         }
     }
 
+}
+
+.loader {
+    text-align: center;
+    padding: 64px 0px;
+    position: relative;
+
+    .spinner {
+        stroke-width: 2px;
+    }
 }
 
 @media only screen and (max-width: 420px) {
