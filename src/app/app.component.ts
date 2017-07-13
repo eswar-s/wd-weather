@@ -39,6 +39,10 @@ export class AppComponent implements OnInit {
     .subscribe((event: NavigationEnd) => {
       if (event.url === '/') {
         this.activateCancelButton = false;
+        this.isOpenWeather = true;
+        this.showCityForm = false;
+        this.isFormValidating = false;
+        this.cityNameModel = '';
       } else if (event.url === '/yahoo') {
         this.activateCancelButton = false;
         this.isOpenWeather = false;
