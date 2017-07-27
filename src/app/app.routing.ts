@@ -10,14 +10,9 @@ import { WeatherCityListComponent } from './weather-city-list/weather-city-list.
 import { WeatherCityComponent } from './weather-city/weather-city.component';
 
 const routes: Routes = [
-    {
-        path: '',
-        children: [
-            { path: '', pathMatch: 'full', component: OpenWeatherComponent },
-            { path: 'yahoo', pathMatch: 'full', component: WeatherCityListComponent },
-            { path: ':city', pathMatch: 'full', component: WeatherCityComponent}
-        ]
-    }
+    { path: '', pathMatch: 'full', component: OpenWeatherComponent },
+    { path: 'yahoo', pathMatch: 'full', component: WeatherCityListComponent },
+    { path: ':city', pathMatch: 'full', component: WeatherCityComponent}
 ];
 
 @NgModule({
