@@ -22,7 +22,7 @@
       "sizes": "256x256",
       "type": "image/png"
     }],
-  "start_url": "/index.html",
+  "start_url": "/wd-weather/index.html",
   "display": "standalone",
   "background_color": "#becae5",
   "theme_color": "#262a33"
