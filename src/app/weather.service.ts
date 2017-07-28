@@ -57,16 +57,16 @@ export class WeatherService {
     const storedSavedLocations = localStorage.getItem('saved_locations');
     if (storedSavedLocations) {
       savedLocations = JSON.parse(storedSavedLocations);
-      let filteredLocations = savedLocations.filter((item: any) => data.location.city !== item);
+      const filteredLocations = savedLocations.filter((item: any) => data.location.city !== item);
       localStorage.setItem('saved_locations', JSON.stringify(filteredLocations));
     }
     this.store.dispatch({ type: 'DELETE_WEATHER', payload: data});
   }
 
   public getWeatherByCity(name: string): Observable<Response> {
-    let apiURL = 'https://query.yahooapis.com/v1/public/yql';
+    const apiURL = 'https://query.yahooapis.com/v1/public/yql';
 
-    let params = new URLSearchParams();
+    const params = new URLSearchParams();
     params.set('q', `select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="${name}")`);
     params.set('format', 'json');
     params.set('callback', 'JSONP_CALLBACK');
@@ -75,7 +75,7 @@ export class WeatherService {
   }
 
   public getOpenWeather(city: string): Observable<Response> {
-    let apiURL = environment.openWeatherAPI;
+    const apiURL = environment.openWeatherAPI;
 
     let params = new URLSearchParams();
     params.set('id', city);

@@ -35,12 +35,20 @@ describe('OpenWeatherComponent', () => {
     fixture = TestBed.createComponent(OpenWeatherComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    de = fixture.debugElement.query(By.css('.city-name'));
-    el = de.nativeElement;
+    
   });
 
   it('should be created', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('city name should be available', () => {
+    component.cityName = 'London';
+    component.weatherData = [];
+    fixture.detectChanges();
+    de = fixture.debugElement.query(By.css('.city-name'));
+    el = de.nativeElement;
+    expect(el.textContent).toContain('London');
   });
 
 });
