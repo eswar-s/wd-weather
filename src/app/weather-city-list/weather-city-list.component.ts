@@ -35,7 +35,7 @@ export class WeatherCityListComponent implements OnInit {
   }
 
   stringAsDate(value: string): Date {
-    let date = new Date(value.substr(5).substr(0, 11).toUpperCase());
+    const date = new Date(value.substr(5).substr(0, 11).toUpperCase());
     if (value.substr(23, 2) === 'PM') {
       date.setHours(Number(value.substr(17, 2)) + 12);
     } else {

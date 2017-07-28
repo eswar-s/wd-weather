@@ -13,7 +13,7 @@ describe('ToastComponent', () => {
   let de: DebugElement;
   let el: HTMLElement;
 
-  let service = new ToastService(null);
+  const service = new ToastService(null);
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({

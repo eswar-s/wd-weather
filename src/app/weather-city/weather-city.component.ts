@@ -29,7 +29,7 @@ export class WeatherCityComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.subscription = this.route.params.subscribe(params => {
-      let tempWeatherData = this.weatherList.filter(weather => {
+      const tempWeatherData = this.weatherList.filter(weather => {
         return weather.location.city === params['city'];
       });
 

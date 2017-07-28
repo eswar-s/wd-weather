@@ -35,7 +35,6 @@ describe('OpenWeatherComponent', () => {
     fixture = TestBed.createComponent(OpenWeatherComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    
   });
 
   it('should be created', () => {

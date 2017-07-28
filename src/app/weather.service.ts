@@ -77,7 +77,7 @@ export class WeatherService {
   public getOpenWeather(city: string): Observable<Response> {
     const apiURL = environment.openWeatherAPI;
 
-    let params = new URLSearchParams();
+    const params = new URLSearchParams();
     params.set('id', city);
     params.set('APPID', '2858d62c90078157cddb84347d8430a2');
     params.set('callback', 'JSONP_CALLBACK');
